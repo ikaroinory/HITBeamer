@@ -28,7 +28,9 @@
 \DeclareOption{computing}{\def\bool@computing{true}}
 
 \def\bool@en{false}
-\DeclareOption{en}{\def\bool@en{true}}
+\DeclareOption{en}{
+    \def\bool@en{true}
+}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbeamer}}
 \ProcessOptions\relax
@@ -62,9 +64,12 @@
 % Math
 \RequirePackage{bm}
 
+% Caption
+\RequirePackage{caption}
+
 %----------------------------------------------------------------------------------------------------%
 %
-% -> global Variables
+% -> Global variables
 %
 %----------------------------------------------------------------------------------------------------%
 \gdef\global@title{Unknown}
@@ -118,6 +123,16 @@
         \global@reportYear 年\global@reportMonth 月\global@reportDay 日%
     }%
 }
+
+%----------------------------------------------------------------------------------------------------%
+%
+% -> Caption
+%
+%----------------------------------------------------------------------------------------------------%
+\ifthenelse{\equal{\bool@en}{true}}{
+    \captionsetup[figure]{labelfont={bf}, labelformat={default}, labelsep=period, name={Figure}}
+    \captionsetup[table]{labelfont={bf}, labelformat={default}, labelsep=period, name={Table}}
+}{}
 
 %----------------------------------------------------------------------------------------------------%
 %
