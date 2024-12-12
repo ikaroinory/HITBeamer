@@ -1,0 +1,71 @@
+{
+    "HIT-beamer-document-structure": {
+        "prefix": "\\hit",
+        "body": [
+            "\\documentclass[aspectratio=169, hideNav]{HITBeamer}",
+            "",
+            "\\title{$1}",
+            "\\institute{$2}",
+            "\\author{$3}",
+            "% \\supervisor{}",
+            "\\reportDate{$4}{$5}{$6}",
+            "",
+            "\\begin{document}",
+            "\t\\cover",
+            "\t$0",
+            "\\end{document}",
+            ""
+        ],
+        "description": "HIT beamer document class for 16:9."
+    },
+    "title": {
+        "prefix": "\\tit",
+        "body": "\\title{$1}",
+        "description": "Title."
+    },
+    "institute": {
+        "prefix": "\\ins",
+        "body": "\\institute{$1}",
+        "description": "Institute."
+    },
+    "author": {
+        "prefix": "\\aut",
+        "body": "\\author{$1}",
+        "description": "Author."
+    },
+    "supervisor": {
+        "prefix": "\\sup",
+        "body": "\\supervisor{$1}",
+        "description": "Supervisor."
+    },
+    "report-date": {
+        "prefix": "\\rd",
+        "body": "\\reportDate{$1}{$2}{$3}",
+        "description": "Report date."
+    },
+    "author-prefix": {
+        "prefix": "\\ap",
+        "body": "\\authorPrefix{$1}",
+        "description": "Author prefix."
+    },
+    "supervisor-prefix": {
+        "prefix": "\\sp",
+        "body": "\\supervisorPrefix{$1}",
+        "description": "Supervisor prefix."
+    },
+    "cover": {
+        "prefix": "\\cov",
+        "body": "\\cover",
+        "description": "Beamer cover."
+    },
+    "toc": {
+        "prefix": "\\t",
+        "body": "\\toc",
+        "description": "Table of contents."
+    },
+    "endpage": {
+        "prefix": "\\ep",
+        "body": "\\endpage[$2]{$1}",
+        "description": "End page."
+    }
+}
