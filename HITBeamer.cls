@@ -76,9 +76,9 @@
 \gdef\global@author{Unknown}
 \gdef\global@institute{Unknown}
 \gdef\global@supervisor{Unknown}
-\gdef\global@reportYear{Unknown}
-\gdef\global@reportMonth{Unknown}
-\gdef\global@reportDay{Unknown}
+\gdef\global@reportYear{\the\year}
+\gdef\global@reportMonth{\the\month}
+\gdef\global@reportDay{\the\day}
 \gdef\global@authorPrefix{}
 \NewDocumentCommand{\authorPrefix}{m}{\gdef\global@authorPrefix{#1}}
 \gdef\global@supervisorPrefix{}
@@ -86,7 +86,7 @@
 
 \newcommand{\command@englishmonthshort}[1]{%
     \ifcase#1%
-        {\color{red}<Undefined Case.>}%
+        \PackageError{HITBeamer}{The range of months is from 1 to 12}{}
     \or%
         Jan.%
     \or%
@@ -112,7 +112,7 @@
     \or%
         Dec.%
     \else%
-        {\color{red}<Undefined Case.>}%
+        \PackageError{HITBeamer}{The range of months is from 1 to 12}{}
     \fi%
 }
 
@@ -222,10 +222,19 @@
     \gdef\global@supervisor{#1}
 }
 
-\NewDocumentCommand{\reportDate}{mmm}{
+\NewDocumentCommand{\reportYear}{m}{
     \gdef\global@reportYear{#1}
-    \gdef\global@reportMonth{#2}
-    \gdef\global@reportDay{#3}
+}
+\NewDocumentCommand{\reportMonth}{m}{
+    \gdef\global@reportMonth{#1}
+}
+\NewDocumentCommand{\reportDay}{m}{
+    \gdef\global@reportDay{#1}
+}
+\NewDocumentCommand{\reportDate}{mmm}{
+    \reportYear{#1}
+    \reportMonth{#2}
+    \reportDay{#3}
 }
 
 \NewDocumentCommand{\cover}{}{
