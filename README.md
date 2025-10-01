@@ -41,7 +41,7 @@ git clone https://github.com/ikaroinory/HITBeamer.git
 定制：
 
 - `\authorPrefix{<prefix>}`：设置作者前缀，如`\authorPrefix{汇报人}\author{张三}`将显示`汇报人：张三`
-- `\supervisorPrefix{<prefix>}`：设置指导者前缀，如`\supervisorPrefix{指导教师}\author{张三}`将显示`指导教师：张三`
+- `\supervisorPrefix{<prefix>}`：设置指导者前缀，如`\supervisorPrefix{指导教师}\supervisor{李四}`将显示`指导教师：李四`
 
 页面：
 
